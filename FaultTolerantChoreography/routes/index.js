@@ -1,86 +1,29 @@
 var async = require('async');
 var httpreq = require('request');
+var promotion = require('./promotion'), price = require('./price'), clearance = require('./clearance');
+var url = require('url');
 
-exports.getPrice = function(request, response) {
+exports.getPriceDetails = function(request, response) {
 
 	request.header("Access-Control-Allow-Origin", "*");
 	request.header("Access-Control-Allow-Headers", "X-Requested-With");
 
-	var promotion;
-	console.log("POST: " + request.body);
-
 	var finalres = {};
+	var queryObject = url.parse(request.url, true).query;
 
-	async.parallel([
-			function(callback) {
-				httpreq(
-						{
-							url : 'http://localhost:8084/price/list',
-							method : 'POST',
-							headers : {
-								'Content-Type' : 'application/json'
-							},
-							json : [ '074773141', '075077445', '074951909',
-									'075620534', '075620586', '076742716',
-									'075997220' ]
-						}, function(error, resp, body) {
-							if (error) {
-								callback(error);
-							} else {
-								finalres.price = body;
-								callback();
-							}
-						});
+	var execTasks = [];
 
-			},
-			function(callback) {
-				httpreq(
-						{
-							url : 'http://localhost:8082/promotion/list',
-							method : 'POST',
-							headers : {
-								'Content-Type' : 'application/json'
-							},
-							json : [ '074773141', '075077445', '074951909',
-									'075620534', '075620586', '076742716',
-									'075997220' ]
-						}, function(error, resp, body) {
-							if (error) {
-								callback(error);
-							} else {
-								finalres.promotion = body;
-								callback();
-							}
-						});
-			},
-			function(callback) {
-				httpreq(
-						{
-							url : 'http://localhost:8082/clearance/list', // URL
-																			// to
-							// hit
-							method : 'POST',
-							headers : {
-								'Content-Type' : 'application/json'
-							},
-							json : [ '074773141', '075077445', '074951909',
-									'075620534', '075620586', '076742716',
-									'075997220' ]
-						}, function(error, resp, body) {
-							if (error) {
-								callback(error);
-							} else {
-								finalres.clearance = body;
-								callback();
-							}
-						});
-			} ], function(err, results) {
+	execTasks.push(price.getProductPrices.bind(price, queryObject.tpnb, "1"));
+	execTasks.push(promotion.getPromoProduct.bind(promotion, queryObject.tpnb,
+			"5"));
+	execTasks.push(clearance.getProductClearance.bind(clearance,
+			queryObject.tpnb, "20"));
+
+	async.parallel(execTasks, function(err, results) {
 		if (err) {
 			console.log(err);
 		} else {
-			response.send(finalres);
-
+			response.send(results);
 		}
-
 	});
 };

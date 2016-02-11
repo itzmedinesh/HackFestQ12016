@@ -2,7 +2,7 @@
  * Module dependencies.
  */
 
-var express = require('express'), routes = require('./routes'), promotion = require('./routes/promotion'), price = require('./routes/price'), clearance = require('./routes/clearance'), http = require('http'), path = require('path');
+var express = require('express'), routes = require('./routes'), http = require('http'), path = require('path');
 var url = require('url');
 
 var dustjs = require('adaro');
@@ -30,44 +30,7 @@ if ('development' == app.get('env')) {
 
 app.set('port', process.env.PORT || 7000);
 
-app.get('/api/promotion', function(request, response) {
-	var queryObject = url.parse(request.url, true).query;
-	promotion.getPromoProduct(queryObject.tpnb, queryObject.zone, function(err,
-			data) {
-		if (err) {
-			console.log(err);
-		} else {
-			// console.log(data);
-			response.send(data);
-		}
-	});
-});
-
-app.get('/api/price', function(request, response) {
-	var queryObject = url.parse(request.url, true).query;
-
-	price.getProductPrices(queryObject.tpnb, queryObject.zone, function(err,
-			data) {
-		if (err) {
-			console.log(err);
-		} else {
-			response.send(data);
-		}
-	});
-});
-
-app.get('/api/clearance', function(request, response) {
-	var queryObject = url.parse(request.url, true).query;
-
-	clearance.getProductClearance(queryObject.tpnb, queryObject.zone, function(
-			err, data) {
-		if (err) {
-			console.log(err);
-		} else {
-			response.send(data);
-		}
-	});
-});
+app.get('/api/finalprice', routes.getPriceDetails);
 
 http.createServer(app).listen(app.get('port'), function() {
 	console.log('Choreography server listening on port ' + app.get('port'));

@@ -5,8 +5,6 @@ function Promotion() {
 
 }
 
-var tpnb;
-var zone;
 var promoUrl = 'http://localhost:8082/promotion/';
 
 var promoCircuitConfig = {
