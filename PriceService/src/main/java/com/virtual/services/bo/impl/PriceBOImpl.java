@@ -10,7 +10,9 @@ import java.util.Set;
 import org.slf4j.Logger;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.virtual.price.core.Price;
 import com.virtual.price.core.Product;
+import com.virtual.promotion.core.PromotionEntity;
 import com.virtual.services.bo.PriceBO;
 import com.virtual.services.dao.PriceDAO;
 import com.virtual.services.exceptions.PriceBusinessException;
@@ -31,10 +33,20 @@ public class PriceBOImpl<T, M> implements PriceBO<T, M> {
 	}
 
 	@Override
-	public List<T> findPriceByTPNB(String tpnb, String zone)
+	public Product findPriceByTPNB(String tpnb, String zone)
 			throws PriceBusinessException {
-		// TODO Auto-generated method stub
-		return null;
+		Product price = null;
+        LOGGER.info("Enter findPriceByTPNB");
+        try {
+            Object priceJson = priceDAO.retrievePriceByTPN(tpnb, zone);
+            price = deserializeJSON(priceJson, Product.class);
+        } catch (PriceDataAccessException e) {
+            throw new PriceBusinessException(e);
+        } catch (IOException e) {
+            throw new PriceBusinessException(e);
+        }
+        LOGGER.info("Exit findPriceByTPNB");
+        return price;
 	}
 	
 	@Override
