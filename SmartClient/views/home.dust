@@ -165,8 +165,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<a ng-click="myPrice('050000016');" class="collapsed" data-toggle="collapse" data-parent="#itemprice" href="#collapse1" aria-expanded="false" aria-controls="collapse1">Strawberry</a>
 						</h3>
 						<div id="collapse1" class="panel-collapse collapse out" role="tabpanel" aria-labelledby="headingOne">
-	  						<div class="panel-body">
-							Price of Item is : [[price.regprice]]
+	  						<div ng-if="[[price.tpnb]] == '050000016' " class="panel-body">
+								<p ng-if="[[price.regprice]] != null && [[price.regprice]] != ''">
+									Regular Price : [[price.regprice]]
+								</p>
+								<p ng-if="[[price.clearanceprice]] != null && [[price.clearanceprice]] != '' " >
+									Clearance Price : [[price.clearanceprice]]
+								</p>
+								<p ng-if="[[price.promoprice]] != null && [[price.promoprice]] != '' ">
+									*[[price.promoprice]]
+								</p>
   							</div>
 						</div>
 					</div>
@@ -180,8 +188,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<a ng-click="myPrice('050000017');" class="collapsed" data-toggle="collapse" data-parent="#itemprice" href="#collapse2" aria-expanded="false" aria-controls="collapse2">Bagels</a>
 						</h3>
 						<div id="collapse2" class="panel-collapse collapse out" role="tabpanel" aria-labelledby="headingOne">
-	  						<div class="panel-body">
-							Price of Item is : [[price.regprice]]
+	  						<div ng-if="[[price.tpnb]] == '050000017' " class="panel-body">
+								<p ng-if="[[price.regprice]] != null && [[price.regprice]] != ''">
+									Regular Price : [[price.regprice]]
+								</p>
+								<p ng-if="[[price.clearanceprice]] != null && [[price.clearanceprice]] != '' " >
+									Clearance Price : [[price.clearanceprice]]
+								</p>
+								<p ng-if="[[price.promoprice]] != null && [[price.promoprice]] != '' ">
+									*[[price.promoprice]]
+								</p>
   							</div>
 						</div>
 					</div>
@@ -195,8 +211,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<a ng-click="myPrice('050000018');" class="collapsed" data-toggle="collapse" data-parent="#itemprice" href="#collapse3" aria-expanded="false" aria-controls="collapse3">Pasta</a>
 						</h3>
 						<div id="collapse3" class="panel-collapse collapse out" role="tabpanel" aria-labelledby="headingOne">
-	  						<div class="panel-body">
-							Price of Item is : [[price.regprice]]
+	  						<div ng-if="[[price.tpnb]] == '050000018' " class="panel-body">
+								<p ng-if="[[price.regprice]] != null && [[price.regprice]] != ''">
+									Regular Price : [[price.regprice]]
+								</p>
+								<p ng-if="[[price.clearanceprice]] != null && [[price.clearanceprice]] != '' " >
+									Clearance Price : [[price.clearanceprice]]
+								</p>
+								<p ng-if="[[price.promoprice]] != null && [[price.promoprice]] != '' ">
+									*[[price.promoprice]]
+								</p>
   							</div>
 						</div>
 					</div>
@@ -214,8 +238,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<a ng-click="myPrice('050000019');" class="collapsed" data-toggle="collapse" data-parent="#itemprice1" href="#collapse4" aria-expanded="false" aria-controls="collapse4">Desserts</a>
 						</h3>
 						<div id="collapse4" class="panel-collapse collapse out" role="tabpanel" aria-labelledby="headingOne">
-	  						<div class="panel-body">
-							Price of Item is : [[price.regprice]]
+	  						<div ng-if="[[price.tpnb]] == '050000019' " class="panel-body">
+								<p ng-if="[[price.regprice]] != null && [[price.regprice]] != ''">
+									Regular Price : [[price.regprice]]
+								</p>
+								<p ng-if="[[price.clearanceprice]] != null && [[price.clearanceprice]] != '' " >
+									Clearance Price : [[price.clearanceprice]]
+								</p>
+								<p ng-if="[[price.promoprice]] != null && [[price.promoprice]] != '' ">
+									*[[price.promoprice]]
+								</p>
   							</div>
 						</div>
 					</div>
@@ -230,7 +262,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</h3>
 						<div id="collapse5" class="panel-collapse collapse out" role="tabpanel" aria-labelledby="headingOne">
 	  						<div ng-if="[[price.tpnb]] == '050000020' " class="panel-body">
-								<p>Regular Price : [[price.regprice]]</p>
+								<p ng-if="[[price.regprice]] != null && [[price.regprice]] != ''">
+									Regular Price : [[price.regprice]]
+								</p>
 								<p ng-if="[[price.clearanceprice]] != null && [[price.clearanceprice]] != '' " >
 									Clearance Price : [[price.clearanceprice]]
 								</p>
