@@ -1,0 +1,97 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files (x86)\\nodejs\\\\node.exe',
+1 verbose cli   'C:\\Program Files (x86)\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.32
+4 verbose node symlink C:\Program Files (x86)\nodejs\\node.exe
+5 verbose readDependencies using package.json deps
+6 verbose install where, deps [ 'D:\\HackMe\\MuSvcChoreography\\SmartClient',
+6 verbose install   [ 'express',
+6 verbose install     'dust',
+6 verbose install     'adaro',
+6 verbose install     'async',
+6 verbose install     'request',
+6 verbose install     'circuit-breaker-js',
+6 verbose install     'resilient-http' ] ]
+7 info preinstall SmartClient@0.0.1
+8 warn package.json dust@0.3.0 No repository field.
+9 verbose readDependencies using package.json deps
+10 verbose already installed skipping express@3.2.6 D:\HackMe\MuSvcChoreography\SmartClient
+11 verbose already installed skipping dust@* D:\HackMe\MuSvcChoreography\SmartClient
+12 verbose already installed skipping adaro@* D:\HackMe\MuSvcChoreography\SmartClient
+13 verbose already installed skipping async@* D:\HackMe\MuSvcChoreography\SmartClient
+14 verbose already installed skipping request@* D:\HackMe\MuSvcChoreography\SmartClient
+15 verbose already installed skipping circuit-breaker-js@* D:\HackMe\MuSvcChoreography\SmartClient
+16 verbose cache add [ 'resilient-http@*', null ]
+17 verbose cache add name=undefined spec="resilient-http@*" args=["resilient-http@*",null]
+18 verbose parsed url { protocol: null,
+18 verbose parsed url   slashes: null,
+18 verbose parsed url   auth: null,
+18 verbose parsed url   host: null,
+18 verbose parsed url   port: null,
+18 verbose parsed url   hostname: null,
+18 verbose parsed url   hash: null,
+18 verbose parsed url   search: null,
+18 verbose parsed url   query: null,
+18 verbose parsed url   pathname: 'resilient-http@*',
+18 verbose parsed url   path: 'resilient-http@*',
+18 verbose parsed url   href: 'resilient-http@*' }
+19 verbose cache add name="resilient-http" spec="*" args=["resilient-http","*"]
+20 verbose parsed url { protocol: null,
+20 verbose parsed url   slashes: null,
+20 verbose parsed url   auth: null,
+20 verbose parsed url   host: null,
+20 verbose parsed url   port: null,
+20 verbose parsed url   hostname: null,
+20 verbose parsed url   hash: null,
+20 verbose parsed url   search: null,
+20 verbose parsed url   query: null,
+20 verbose parsed url   pathname: '*',
+20 verbose parsed url   path: '*',
+20 verbose parsed url   href: '*' }
+21 verbose addNamed [ 'resilient-http', '*' ]
+22 verbose addNamed [ null, '*' ]
+23 silly lockFile 6e1257a2-resilient-http resilient-http@*
+24 verbose lock resilient-http@* C:\Users\dsubr1\AppData\Roaming\npm-cache\6e1257a2-resilient-http.lock
+25 silly addNameRange { name: 'resilient-http', range: '*', hasData: false }
+26 verbose request where is /resilient-http
+27 verbose request registry https://registry.npmjs.org/
+28 verbose request id 3ecd066d28f0e424
+29 verbose url raw /resilient-http
+30 verbose url resolving [ 'https://registry.npmjs.org/', './resilient-http' ]
+31 verbose url resolved https://registry.npmjs.org/resilient-http
+32 verbose request where is https://registry.npmjs.org/resilient-http
+33 info trying registry request attempt 1 at 18:56:29
+34 http GET https://registry.npmjs.org/resilient-http
+35 http 404 https://registry.npmjs.org/resilient-http
+36 silly registry.get cb [ 404,
+36 silly registry.get   { 'content-type': 'application/json',
+36 silly registry.get     'cache-control': 'max-age=0',
+36 silly registry.get     'content-length': '2',
+36 silly registry.get     'accept-ranges': 'bytes',
+36 silly registry.get     date: 'Wed, 10 Feb 2016 13:26:34 GMT',
+36 silly registry.get     via: '1.1 varnish',
+36 silly registry.get     age: '0',
+36 silly registry.get     connection: 'keep-alive',
+36 silly registry.get     'x-served-by': 'cache-sin6925-SIN',
+36 silly registry.get     'x-cache': 'MISS',
+36 silly registry.get     'x-cache-hits': '0',
+36 silly registry.get     'x-timer': 'S1455110793.958963,VS0,VE830' } ]
+37 silly lockFile 6e1257a2-resilient-http resilient-http@*
+38 silly lockFile 6e1257a2-resilient-http resilient-http@*
+39 error 404 Not Found
+39 error 404
+39 error 404 'resilient-http' is not in the npm registry.
+39 error 404 You should bug the author to publish it
+39 error 404 It was specified as a dependency of 'SmartClient'
+39 error 404
+39 error 404 Note that you can also install from a
+39 error 404 tarball, folder, or http url, or git url.
+40 error System Windows_NT 6.1.7601
+41 error command "C:\\Program Files (x86)\\nodejs\\\\node.exe" "C:\\Program Files (x86)\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install"
+42 error cwd D:\HackMe\MuSvcChoreography\SmartClient
+43 error node -v v0.10.32
+44 error npm -v 1.4.28
+45 error code E404
+46 verbose exit [ 1, true ]

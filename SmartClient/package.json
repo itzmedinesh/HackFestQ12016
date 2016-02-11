@@ -1,0 +1,17 @@
+{
+  "name": "SmartClient",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "3.2.6",
+    "dust": "*",
+    "adaro": "*",
+    "async": "*",
+    "request": "*",
+    "circuit-breaker-js" : "*",
+    "resilient":"*"
+  }
+}
