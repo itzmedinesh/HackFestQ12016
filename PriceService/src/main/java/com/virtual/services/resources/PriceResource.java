@@ -22,6 +22,7 @@ import javax.ws.rs.core.UriInfo;
 import org.slf4j.Logger;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.virtual.price.core.Price;
 import com.virtual.price.core.Product;
 import com.virtual.services.bo.PriceBO;
 import com.virtual.services.exceptions.PriceBusinessException;
@@ -39,11 +40,11 @@ public class PriceResource<T, M> {
 	private static final Logger LOGGER = (Logger) LoggerFactoryWrapper
 			.getLogger(PriceResource.class);
 
-	private PriceBO<T, M> promotionBO;
+	private PriceBO<T, M> priceBO;
 	private ObjectMapper objectMapper;
 
-	public PriceResource(PriceBO<T, M> injectedPromotionBO) {
-		promotionBO = injectedPromotionBO;
+	public PriceResource(PriceBO<T, M> injectedPriceBO) {
+		priceBO = injectedPriceBO;
 	}
 
 	@GET
@@ -54,14 +55,14 @@ public class PriceResource<T, M> {
 			@Context UriInfo uriInfo,
 			@ApiParam(value = "TPNB of product", required = true) @PathParam("tpnb") String tpnb,
 			@ApiParam(value = "Zone of product", required = true) @PathParam("zone") String zone) {
-		LOGGER.info("Enter promotion get()");
-		List<T> response = null;
+		LOGGER.info("Enter price get()");
+		Product response = null;
 		try {
-			response = promotionBO.findPriceByTPNB(tpnb, zone);
+			response = priceBO.findPriceByTPNB(tpnb, zone);
 		} catch (PriceBusinessException e) {
 			e.printStackTrace();
 		}
-		LOGGER.info("Exit promotion get()");
+		LOGGER.info("Exit price get()");
 		return ok(response);
 
 	}
@@ -83,7 +84,7 @@ public class PriceResource<T, M> {
 		Set<String> zonelist = new HashSet<String>();
 		zonelist.add(zone);
 		try {
-			priceForTpnList = promotionBO.findPriceByTPNBBulk(tpnlist, zonelist);
+			priceForTpnList = priceBO.findPriceByTPNBBulk(tpnlist, zonelist);
 			System.out.println("after fetch");
 		} catch (PriceBusinessException e) {
 			e.printStackTrace();

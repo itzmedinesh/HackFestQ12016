@@ -2,7 +2,7 @@
  * Module dependencies.
  */
 
-var express = require('express'), routes = require('./routes'), http = require('http'), path = require('path');
+var express = require('express'), routes = require('./routes'), home = require('./routes/home'), http = require('http'), path = require('path');
 
 var dustjs = require('adaro');
 
@@ -33,4 +33,7 @@ var myserver = http.createServer(app).listen(app.get('port'), function() {
 	console.log('Smart Client available on port ' + app.get('port'));
 });
 
+app.get('/', home.index);
+app.get('/index.html', home.index);
+app.get('/mail.html', home.mail);
 app.get('/api/product/catalog/parallel', routes.index);
