@@ -15,6 +15,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
 		function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="js/callPrice.js"></script>
+
 <!-- //for-mobile-apps -->
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
@@ -149,98 +153,99 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 					<div class="clearfix"> </div>
 				</div>
-				<div class="msg-text-bottom" id="itemprice" role="tablist" aria-multiselectable="true">
-					<div class="col-md-4 msg-text-bottom-left">
+
+				<div ng-app="MyItemPrice" class="msg-text-bottom" id="itemprice" role="tablist" aria-multiselectable="true">
+					<div ng-controller="MyCtrl" class="col-md-4 msg-text-bottom-left">
 						<figure class="effect-winston">
-							<a class="collapsed" data-toggle="collapse" data-parent="#itemprice" href="#collapse1" aria-expanded="false" aria-controls="collapse1">
+							<a ng-click="myPrice('12345');" lass="collapsed" data-toggle="collapse" data-parent="#itemprice" href="#collapse1" aria-expanded="false" aria-controls="collapse1">
 								<img src="images/4.jpg" alt=" " class="img-responsive" />	
 							</a>
 						</figure>
 						<h3>
-							<a class="collapsed" data-toggle="collapse" data-parent="#itemprice" href="#collapse1" aria-expanded="false" aria-controls="collapse1">Strawberry</a>
+							<a ng-click="myPrice('12345');" class="collapsed" data-toggle="collapse" data-parent="#itemprice" href="#collapse1" aria-expanded="false" aria-controls="collapse1">Strawberry</a>
 						</h3>
 						<div id="collapse1" class="panel-collapse collapse out" role="tabpanel" aria-labelledby="headingOne">
 	  						<div class="panel-body">
-							Price of Item is : 
+							Price of Item is : [[price.regprice]]
   							</div>
 						</div>
 					</div>
-					<div class="col-md-4 msg-text-bottom-left">
+					<div ng-controller="MyCtrl" class="col-md-4 msg-text-bottom-left">
 						<figure class="effect-winston">
-							<a class="collapsed" data-toggle="collapse" data-parent="#itemprice" href="#collapse2" aria-expanded="false" aria-controls="collapse2">
+							<a ng-click="myPrice('12345');" class="collapsed" data-toggle="collapse" data-parent="#itemprice" href="#collapse2" aria-expanded="false" aria-controls="collapse2">
 								<img src="images/5.jpg" alt=" " class="img-responsive" />
 							</a>
 						</figure>
 						<h3>
-							<a class="collapsed" data-toggle="collapse" data-parent="#itemprice" href="#collapse2" aria-expanded="false" aria-controls="collapse2">Bagels</a>
+							<a ng-click="myPrice('12345');" class="collapsed" data-toggle="collapse" data-parent="#itemprice" href="#collapse2" aria-expanded="false" aria-controls="collapse2">Bagels</a>
 						</h3>
 						<div id="collapse2" class="panel-collapse collapse out" role="tabpanel" aria-labelledby="headingOne">
 	  						<div class="panel-body">
-							Price of Item is : 
+							Price of Item is : [[price.regprice]]
   							</div>
 						</div>
 					</div>
-					<div class="col-md-4 msg-text-bottom-left">
+					<div ng-controller="MyCtrl" class="col-md-4 msg-text-bottom-left">
 						<figure class="effect-winston">
-							<a class="collapsed" data-toggle="collapse" data-parent="#itemprice" href="#collapse3" aria-expanded="false" aria-controls="collapse3">
+							<a ng-click="myPrice('12345');" class="collapsed" data-toggle="collapse" data-parent="#itemprice" href="#collapse3" aria-expanded="false" aria-controls="collapse3">
 								<img src="images/6.jpg" alt=" " class="img-responsive" />
 							</a>
 						</figure>
 						<h3>
-							<a class="collapsed" data-toggle="collapse" data-parent="#itemprice" href="#collapse3" aria-expanded="false" aria-controls="collapse3">Pasta</a>
+							<a ng-click="myPrice('12345');" class="collapsed" data-toggle="collapse" data-parent="#itemprice" href="#collapse3" aria-expanded="false" aria-controls="collapse3">Pasta</a>
 						</h3>
 						<div id="collapse3" class="panel-collapse collapse out" role="tabpanel" aria-labelledby="headingOne">
 	  						<div class="panel-body">
-							Price of Item is : 
+							Price of Item is : [[price.regprice]]
   							</div>
 						</div>
 					</div>
 					<div class="clearfix"> </div>
 				</div>
 
-				<div class="msg-text-bottom" id="itemprice1" role="tablist" aria-multiselectable="true">
-					<div class="col-md-4 msg-text-bottom-left">
+				<div ng-app="MyItemPrice" class="msg-text-bottom" id="itemprice1" role="tablist" aria-multiselectable="true">
+					<div ng-controller="MyCtrl" class="col-md-4 msg-text-bottom-left">
 						<figure class="effect-winston">
-							<a class="collapsed" data-toggle="collapse" data-parent="#itemprice" href="#collapse4" aria-expanded="false" aria-controls="collapse4">
+							<a ng-click="myPrice('12345');" class="collapsed" data-toggle="collapse" data-parent="#itemprice" href="#collapse4" aria-expanded="false" aria-controls="collapse4">
 								<img src="images/9.jpg" alt=" " class="img-responsive" />	
 							</a>
 						</figure>
 						<h3>
-							<a class="collapsed" data-toggle="collapse" data-parent="#itemprice1" href="#collapse4" aria-expanded="false" aria-controls="collapse4">Desserts</a>
+							<a ng-click="myPrice('12345');" class="collapsed" data-toggle="collapse" data-parent="#itemprice1" href="#collapse4" aria-expanded="false" aria-controls="collapse4">Desserts</a>
 						</h3>
 						<div id="collapse4" class="panel-collapse collapse out" role="tabpanel" aria-labelledby="headingOne">
 	  						<div class="panel-body">
-							Price of Item is : 
+							Price of Item is : [[price.regprice]]
   							</div>
 						</div>
 					</div>
-					<div class="col-md-4 msg-text-bottom-left">
+					<div ng-controller="MyCtrl" class="col-md-4 msg-text-bottom-left">
 						<figure class="effect-winston">
-							<a class="collapsed" data-toggle="collapse" data-parent="#itemprice" href="#collapse5" aria-expanded="false" aria-controls="collapse5">
+							<a ng-click="myPrice('12345');" class="collapsed" data-toggle="collapse" data-parent="#itemprice" href="#collapse5" aria-expanded="false" aria-controls="collapse5">
 								<img src="images/10.jpg" alt=" " class="img-responsive" />
 							</a>
 						</figure>
 						<h3>
-							<a class="collapsed" data-toggle="collapse" data-parent="#itemprice1" href="#collapse5" aria-expanded="false" aria-controls="collapse5">Beer</a>
+							<a ng-click="myPrice('12345');" class="collapsed" data-toggle="collapse" data-parent="#itemprice1" href="#collapse5" aria-expanded="false" aria-controls="collapse5">Beer</a>
 						</h3>
 						<div id="collapse5" class="panel-collapse collapse out" role="tabpanel" aria-labelledby="headingOne">
 	  						<div class="panel-body">
-							Price of Item is : 
+							Price of Item is : [[price.regprice]]
   							</div>
 						</div>
 					</div>
-					<div class="col-md-4 msg-text-bottom-left">
+					<div ng-controller="MyCtrl" class="col-md-4 msg-text-bottom-left">
 						<figure class="effect-winston">
-							<a class="collapsed" data-toggle="collapse" data-parent="#itemprice" href="#collapse6" aria-expanded="false" aria-controls="collapse6">
+							<a ng-click="myPrice('12345');" class="collapsed" data-toggle="collapse" data-parent="#itemprice" href="#collapse6" aria-expanded="false" aria-controls="collapse6">
 								<img src="images/11.jpg" alt=" " class="img-responsive" />
 							</a>
 						</figure>
 						<h3>
-							<a class="collapsed" data-toggle="collapse" data-parent="#itemprice1" href="#collapse6" aria-expanded="false" aria-controls="collapse6">Sprits</a>
+							<a ng-click="myPrice('12345');" class="collapsed" data-toggle="collapse" data-parent="#itemprice1" href="#collapse6" aria-expanded="false" aria-controls="collapse6">Sprits</a>
 						</h3>
 						<div id="collapse6" class="panel-collapse collapse out" role="tabpanel" aria-labelledby="headingOne">
 	  						<div class="panel-body">
-							Price of Item is : 
+							Price of Item is : [[price.regprice]]
   							</div>
 						</div>
 					</div>
@@ -267,7 +272,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</ul>
 				</div>
 				<div class="clearfix"> </div>
-			</div>	
+			</div>
 		</div>
 		</div>
 	</div>

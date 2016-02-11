@@ -13,7 +13,7 @@ exports.index = function(request, response) {
 			basePath : '/api/product/catalog'
 		},
 		discovery : {
-			servers : [ 'http://localhost:9080/priceapi' ],
+			servers : discoveryServers,
 			parallel : false,
 			timeout : 1000,
 		}
