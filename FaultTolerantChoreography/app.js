@@ -2,7 +2,7 @@
  * Module dependencies.
  */
 
-var express = require('express'), routes = require('./routes'), http = require('http'), path = require('path');
+var express = require('express'), routes = require('./routes'), promotion = require('./routes/promotion'),http = require('http'), path = require('path');
 
 var dustjs = require('adaro');
 
@@ -29,7 +29,16 @@ if ('development' == app.get('env')) {
 
 app.set('port', process.env.PORT || 7000);
 
-app.post('/api/price', routes.getPrice);
+app.get('/api/promotion', function(req, res){
+	promotion.getPromoProduct("065344866","Z5",function(err, data){
+		if(err){
+			console.log(err);
+		}else{
+			//console.log(data);
+			res.send(data);
+		}
+	});
+});
 
 http.createServer(app).listen(
 		app.get('port'),
