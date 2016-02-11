@@ -1,0 +1,22 @@
+dummyCouchbaseMode: true
+
+couchbase.nodes:
+  - http://localhost:8091/pools
+  - http://localhost:8091/pools
+  - http://localhost:8091/pools
+  - http://localhost:8091/pools
+couchbase.bucket: hackfest16
+couchbase.username: "hackfest16"
+couchbase.password: "hackfest16"
+ 
+http:
+  port: 8084
+  adminPort: 9084
+  
+logging:
+  level: ERROR
+  file:
+    enabled: true
+    threshold: INFO
+    currentLogFilename: ./logs/price-service.log
+    archivedLogFilenamePattern: ./logs/price-service-%d.log.gz
