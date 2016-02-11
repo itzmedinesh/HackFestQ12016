@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified">
+	<xs:element name="PrmPrcChgDesc">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="location" />
+				<xs:element ref="loc_type" />
+				<xs:element ref="tsl_zone_id" />
+				<xs:element maxOccurs="unbounded" ref="PrmPrcChgDtl" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="location" type="xs:integer" />
+	<xs:element name="loc_type" type="xs:NCName" />
+	<xs:element name="tsl_zone_id" type="xs:integer" />
+	<xs:element name="PrmPrcChgDtl">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="promo_id" minOccurs="0" />
+				<xs:element ref="promo_name" minOccurs="0" />
+				<xs:element ref="promo_description" minOccurs="0" />
+				<xs:element ref="promo_comp_id" minOccurs="0" />
+				<xs:element ref="promo_comp_desc" minOccurs="0" />
+				<xs:element ref="promo_comp_detail_id" minOccurs="0" />
+				<xs:element ref="apply_order" minOccurs="0" />
+				<xs:element ref="start_date" />
+				<xs:element ref="end_date" />
+				<xs:element ref="tsl_ext_promo_id" minOccurs="0" />
+				<xs:element ref="tsl_state" minOccurs="0" />
+				<xs:element ref="tsl_comp_level_till_desc" minOccurs="0" />
+				<xs:element ref="tsl_promo_event_id" minOccurs="0" />
+				<xs:element ref="tsl_promo_comp_display_id" />
+				<xs:element ref="tsl_funding_percent" minOccurs="0" />
+				<xs:choice>
+					<xs:element ref="PrmPrcChgSmp" />
+					<xs:element ref="PrmPrcChgThr" />
+					<xs:element ref="TSLPrmPrcChgMultiBuy" />
+				</xs:choice>
+				<xs:element ref="TslSupplierDetails" minOccurs="0" />
+				<xs:element ref="TslDetailCount" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="promo_id" type="xs:integer" nillable="true" />
+	<xs:element name="promo_name" type="xs:string" nillable="true" />
+	<xs:element name="promo_description" type="xs:string"
+		nillable="true" />
+	<xs:element name="promo_comp_id" type="xs:integer" />
+	<xs:element name="promo_comp_desc" type="xs:string"
+		nillable="true" />
+	<xs:element name="promo_comp_detail_id" type="xs:integer"
+		nillable="true" />
+	<xs:element name="apply_order" type="xs:integer" nillable="true" />
+	<xs:element name="start_date">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="year" />
+				<xs:element ref="month" />
+				<xs:element ref="day" />
+				<xs:element ref="hour" />
+				<xs:element ref="minute" />
+				<xs:element ref="second" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="end_date">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="year" />
+				<xs:element ref="month" />
+				<xs:element ref="day" />
+				<xs:element ref="hour" />
+				<xs:element ref="minute" />
+				<xs:element ref="second" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="tsl_ext_promo_id" type="xs:integer" />
+	<xs:element name="tsl_state">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:pattern
+					value="(pcd.new)|(pcd.reapproved)|(pcd.cancelled)|(pcd.deleted)" />
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="tsl_comp_level_till_desc" type="xs:string"
+		nillable="true" />
+	<xs:element name="tsl_promo_event_id" type="xs:integer" />
+	<xs:element name="tsl_promo_comp_display_id" type="xs:string" />
+	<xs:element name="TslDetailCount" type="xs:integer" />
+	<xs:element name="tsl_funding_percent" type="xs:integer" />
+	<xs:element name="PrmPrcChgSmp">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="merch_type" />
+				<xs:element ref="dept" />
+				<xs:element ref="class" />
+				<xs:element ref="subclass" />
+				<xs:element ref="item" />
+				<xs:element ref="tsl_consumer_unit" />
+				<xs:element ref="promo_selling_retail" />
+				<xs:element ref="promo_selling_uom" />
+				<xs:element ref="prm_chg_type" />
+				<xs:element ref="prm_chg_value" />
+				<xs:element ref="prm_chg_uom" />
+				<xs:element ref="tsl_coupon_trg_ind" />
+				<xs:element ref="tsl_uplift_percent" />
+				<xs:element ref="tsl_feature_space_ind" />
+				<xs:element ref="tsl_TPND" />
+				<xs:element ref="tsl_comp_detail_level_desc" />
+				<xs:element ref="tsl_template_id" />
+				<xs:element ref="tsl_pos_label_req_ind" />
+				<xs:element ref="tsl_was_price" />
+				<xs:element ref="tsl_price_saving" />
+				<xs:element ref="tsl_weee_indicator" />
+				<xs:element ref="tsl_pos_description1" minOccurs="0" />
+				<xs:element ref="tsl_pos_description2" minOccurs="0" />
+				<xs:element ref="tsl_local_sourced_ind" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="promo_selling_retail" type="xs:integer" />
+	<xs:element name="promo_selling_uom" type="xs:NCName" />
+	<xs:element name="prm_chg_uom" type="xs:NCName" />
+	<xs:element name="tsl_was_price" type="xs:integer" />
+	<xs:element name="tsl_price_saving" type="xs:integer" />
+	<xs:element name="tsl_pos_description2" type="xs:string" />
+	<xs:element name="tsl_local_sourced_ind" type="xs:integer" />
+	<xs:element name="PrmPrcChgThr">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="merch_type" />
+				<xs:element ref="dept" />
+				<xs:element ref="class" />
+				<xs:element ref="subclass" />
+				<xs:element ref="item" />
+				<xs:element ref="tsl_consumer_unit" />
+				<xs:element ref="threshold_id" />
+				<xs:element ref="threshold_name" />
+				<xs:element ref="qualification_type" />
+				<xs:element ref="threshold_type" />
+				<xs:element ref="prm_chg_type" />
+				<xs:element ref="tsl_coupon_trg_ind" />
+				<xs:element ref="tsl_uplift_percent" />
+				<xs:element ref="tsl_feature_space_ind" />
+				<xs:element ref="tsl_TPND" />
+				<xs:element ref="tsl_comp_detail_level_desc" />
+				<xs:element ref="tsl_template_id" />
+				<xs:element ref="tsl_pos_label_req_ind" />
+				<xs:element ref="tsl_pos_description1" />
+				<xs:element ref="tsl_weee_indicator" />
+				<xs:element ref="PrmPrcChgThrDtl" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="threshold_id" type="xs:integer" />
+	<xs:element name="threshold_name" type="xs:string" />
+	<xs:element name="qualification_type" type="xs:integer" />
+	<xs:element name="threshold_type" type="xs:NCName" />
+	<xs:element name="PrmPrcChgThrDtl">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="threshold_value" />
+				<xs:element ref="prm_chg_value" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="threshold_value" type="xs:integer" />
+	<xs:element name="TSLPrmPrcChgMultiBuy">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="multi_buy_promo_type" />
+				<xs:element ref="coupon_trg_ind" />
+				<xs:element ref="tsl_pos_label_req_ind" />
+				<xs:element ref="tsl_weee_indicator" />
+				<xs:element ref="TSLPrmPrcChgBuyList" />
+				<xs:element ref="TSLPrmPrcChgGetList" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="multi_buy_promo_type" type="xs:NCName" />
+	<xs:element name="coupon_trg_ind" type="xs:NCName" />
+	<xs:element name="TSLPrmPrcChgBuyList">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="list_id" />
+				<xs:element ref="buy_item_type" />
+				<xs:element ref="buy_item_value" />
+				<xs:element maxOccurs="unbounded" ref="TSLPrmPrcChgBuyListItem" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="buy_item_type" type="xs:integer" />
+	<xs:element name="buy_item_value" type="xs:integer" />
+	<xs:element name="TSLPrmPrcChgBuyListItem">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="merch_type" />
+				<xs:element ref="dept" />
+				<xs:element ref="class" />
+				<xs:element ref="subclass" />
+				<xs:element ref="item" />
+				<xs:element ref="tsl_consumer_unit" />
+				<xs:element ref="tsl_uplift_percent" />
+				<xs:element ref="tsl_feature_space_ind" />
+				<xs:element ref="tsl_TPND" />
+				<xs:element ref="tsl_comp_detail_level_desc" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="TSLPrmPrcChgGetList">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="list_id" />
+				<xs:element ref="change_type" />
+				<xs:element ref="change_amount" />
+				<xs:element ref="get_quantity" />
+				<xs:element ref="TSLPrmPrcChgGetListItem" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="change_type" type="xs:integer" nillable="false" />
+	<xs:element name="change_amount" type="xs:integer" />
+	<xs:element name="get_quantity" type="xs:integer" />
+	<xs:element name="TSLPrmPrcChgGetListItem">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="merch_type" />
+				<xs:element ref="dept" />
+				<xs:element ref="class" />
+				<xs:element ref="subclass" />
+				<xs:element ref="item" />
+				<xs:element ref="tsl_consumer_unit" />
+				<xs:element ref="tsl_uplift_percent" />
+				<xs:element ref="tsl_feature_space_ind" />
+				<xs:element ref="tsl_TPND" />
+				<xs:element ref="tsl_comp_detail_level_desc" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="TslSupplierDetails">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Supplier_id" />
+				<xs:element ref="Contribution_percent" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Supplier_id" type="xs:integer" />
+	<xs:element name="Contribution_percent" type="xs:decimal" />
+	<xs:element name="year" type="xs:integer" nillable="false" />
+	<xs:element name="month" type="xs:integer" nillable="false" />
+	<xs:element name="day" type="xs:integer" nillable="false" />
+	<xs:element name="hour" type="xs:integer" nillable="false" />
+	<xs:element name="minute" type="xs:integer" nillable="false" />
+	<xs:element name="second" type="xs:integer" nillable="false" />
+	<xs:element name="merch_type" type="xs:integer" />
+	<xs:element name="dept" type="xs:integer" />
+	<xs:element name="class" type="xs:integer" />
+	<xs:element name="subclass" type="xs:integer" />
+	<xs:element name="item" type="xs:string" nillable="false" />
+	<xs:element name="tsl_consumer_unit" type="xs:integer" />
+	<xs:element name="prm_chg_type">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:pattern value="(F)|(A)|(P)|(N)|(V)"></xs:pattern>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="prm_chg_value" type="xs:double" />
+	<xs:element name="tsl_coupon_trg_ind" type="xs:NCName" />
+	<xs:element name="tsl_uplift_percent" type="xs:integer" />
+	<xs:element name="tsl_feature_space_ind" type="xs:NCName" />
+	<xs:element name="tsl_TPND" type="xs:integer" />
+	<xs:element name="tsl_comp_detail_level_desc" type="xs:string" />
+	<xs:element name="tsl_template_id" type="xs:NCName" />
+	<xs:element name="tsl_pos_label_req_ind" type="xs:integer" />
+	<xs:element name="tsl_weee_indicator" type="xs:integer" />
+	<xs:element name="tsl_pos_description1" type="xs:string" />
+	<xs:element name="list_id" type="xs:integer" />
+</xs:schema>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified">
+	<xs:element name="PrmPrcChgRef">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="location" />
+				<xs:element ref="loc_type" />
+				<xs:element ref="tsl_zone_id" />
+				<xs:element maxOccurs="unbounded" ref="PrmPrcChgDtlRef" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="location" type="xs:integer" />
+	<xs:element name="loc_type" type="xs:string" />
+	<xs:element name="tsl_zone_id" type="xs:integer" />
+	<xs:element name="PrmPrcChgDtlRef">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="promo_comp_detail_id" />
+				<xs:element ref="tsl_promo_comp_id" />
+				<xs:element ref="tsl_ext_promo_id" />
+				<xs:element ref="tsl_state" />
+				<xs:choice>
+					<xs:element ref="PrmPrcChgSmpDtlRef" />
+					<xs:element ref="PrmPrcChgThrDtlRef" />
+				</xs:choice>
+				<xs:element ref="TslDetailCount" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="promo_comp_detail_id" type="xs:integer"
+		nillable="false" />
+	<xs:element name="tsl_promo_comp_id" type="xs:integer" />
+	<xs:element name="tsl_ext_promo_id" type="xs:integer" />
+	<xs:element name="tsl_state">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:pattern value="(pcd.cancelled)|(pcd.deleted)"></xs:pattern>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="TslDetailCount" type="xs:integer" />
+	<xs:element name="PrmPrcChgSmpDtlRef">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="merch_type" minOccurs="0" />
+				<xs:element ref="dept" minOccurs="0" />
+				<xs:element ref="class" minOccurs="0" />
+				<xs:element ref="subclass" minOccurs="0" />
+				<xs:element ref="item" />
+				<xs:element ref="tsl_consumer_unit" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PrmPrcChgThrDtlRef">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="merch_type" minOccurs="0"/>
+				<xs:element ref="dept" minOccurs="0"/>
+				<xs:element ref="class" minOccurs="0"/>
+				<xs:element ref="subclass" minOccurs="0"/>
+				<xs:element ref="item" />
+				<xs:element ref="tsl_consumer_unit" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="merch_type" type="xs:integer" />
+	<xs:element name="dept" type="xs:integer" />
+	<xs:element name="class" type="xs:integer" />
+	<xs:element name="subclass" type="xs:integer" />
+	<xs:element name="item" type="xs:string"/>
+	<xs:element name="tsl_consumer_unit" type="xs:integer" />
+</xs:schema>

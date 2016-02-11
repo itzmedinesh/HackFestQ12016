@@ -1,0 +1,52 @@
+import static org.gradle.api.JavaVersion.VERSION_1_7
+
+apply plugin: 'java'
+apply plugin:'maven'
+apply plugin: 'idea'
+
+sourceCompatibility = VERSION_1_7
+targetCompatibility = VERSION_1_7
+
+version = '1.0'
+
+
+buildscript {
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+}
+repositories {
+    maven {
+		        credentials {
+            		username ''
+		            password ''
+        		}
+        url "https://localhost/nexus/content/repositories/central"
+    }
+}
+
+
+dependencies {
+	compile "com.fasterxml.jackson.module:jackson-module-jsonSchema:2.1.0"
+	compile "org.apache.commons:commons-lang3:3.3.1"
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.6'
+}
+
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: "https://localhost/nexus/content/repositories/thirdparty"){
+            	authentication(userName: "", password: "")
+            }
+            pom.version = '1.0'
+            pom.artifactId = 'PromoUtility'
+            pom.groupId = 'com.virutal.promotion.core'
+        }
+    }
+}
