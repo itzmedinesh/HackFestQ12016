@@ -1,0 +1,22 @@
+couchbase.nodes:
+  - http://localhost:8091/pools
+  - http://localhost:8091/pools
+  - http://localhost:8091/pools
+  - http://localhost:8091/pools
+couchbase.bucket: hackfest16
+couchbase.username: "hackfest16"
+couchbase.password: "hackfest16"
+
+dummyCouchbaseMode: false
+
+http:
+  port: 8080
+  adminPort: 9080
+
+logging:
+  level: INFO
+  file:
+    enabled: true
+    threshold: INFO
+    currentLogFilename: ./logs/promotion-service.log
+    archivedLogFilenamePattern: ./logs/promotion-service-%d.log.gz    
