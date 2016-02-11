@@ -13,6 +13,5 @@
     "request": "*",
     "circuit-breaker-js": "*",
     "socket.io": "*"
-
   }
 }

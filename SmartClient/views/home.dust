@@ -142,7 +142,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<p>No pesticides, chemicals, or processed additives bogging down your system means a smaller risk of disease, illness, and disorders in yourself. Nothing leaves you feeling tired and gross like unhealthy junk food.</p>
 				</div>
 			</div>
-			<div class="col-xs-9 banner-body-right" id="foodItems">
+			<div ng-app="MyItemPrice" ng-controller="MyCtrl" class="col-xs-9 banner-body-right" id="foodItems">
 				<div class="msg-text">
 					<div class="col-xs-2 msg-text-left">
 					</div>
@@ -154,8 +154,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="clearfix"> </div>
 				</div>
 
-				<div ng-app="MyItemPrice" class="msg-text-bottom" id="itemprice" role="tablist" aria-multiselectable="true">
-					<div ng-controller="MyCtrl" class="col-md-4 msg-text-bottom-left">
+				<div class="msg-text-bottom" id="itemprice" role="tablist" aria-multiselectable="true">
+					<div class="col-md-4 msg-text-bottom-left">
 						<figure class="effect-winston">
 							<a ng-click="myPrice('050000016');" class="collapsed" data-toggle="collapse" data-parent="#itemprice" href="#collapse1" aria-expanded="false" aria-controls="collapse1">
 								<img src="images/4.jpg" alt=" " class="img-responsive" />	
@@ -170,7 +170,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
   							</div>
 						</div>
 					</div>
-					<div ng-controller="MyCtrl" class="col-md-4 msg-text-bottom-left">
+					<div class="col-md-4 msg-text-bottom-left">
 						<figure class="effect-winston">
 							<a ng-click="myPrice('050000017');" class="collapsed" data-toggle="collapse" data-parent="#itemprice" href="#collapse2" aria-expanded="false" aria-controls="collapse2">
 								<img src="images/5.jpg" alt=" " class="img-responsive" />
@@ -185,7 +185,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
   							</div>
 						</div>
 					</div>
-					<div ng-controller="MyCtrl" class="col-md-4 msg-text-bottom-left">
+					<div class="col-md-4 msg-text-bottom-left">
 						<figure class="effect-winston">
 							<a ng-click="myPrice('050000018');" class="collapsed" data-toggle="collapse" data-parent="#itemprice" href="#collapse3" aria-expanded="false" aria-controls="collapse3">
 								<img src="images/6.jpg" alt=" " class="img-responsive" />
@@ -204,7 +204,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 
 				<div ng-app="MyItemPrice" class="msg-text-bottom" id="itemprice1" role="tablist" aria-multiselectable="true">
-					<div ng-controller="MyCtrl" class="col-md-4 msg-text-bottom-left">
+					<div class="col-md-4 msg-text-bottom-left">
 						<figure class="effect-winston">
 							<a ng-click="myPrice('050000019');" class="collapsed" data-toggle="collapse" data-parent="#itemprice" href="#collapse4" aria-expanded="false" aria-controls="collapse4">
 								<img src="images/9.jpg" alt=" " class="img-responsive" />	
@@ -219,7 +219,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
   							</div>
 						</div>
 					</div>
-					<div ng-controller="MyCtrl" class="col-md-4 msg-text-bottom-left">
+					<div class="col-md-4 msg-text-bottom-left">
 						<figure class="effect-winston">
 							<a ng-click="myPrice('050000020');" class="collapsed" data-toggle="collapse" data-parent="#itemprice" href="#collapse5" aria-expanded="false" aria-controls="collapse5">
 								<img src="images/10.jpg" alt=" " class="img-responsive" />
@@ -229,12 +229,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<a ng-click="myPrice('050000020');" class="collapsed" data-toggle="collapse" data-parent="#itemprice1" href="#collapse5" aria-expanded="false" aria-controls="collapse5">Beer</a>
 						</h3>
 						<div id="collapse5" class="panel-collapse collapse out" role="tabpanel" aria-labelledby="headingOne">
-	  						<div class="panel-body">
-							Price of Item is : [[price.regprice]]
+	  						<div ng-if="[[price.tpnb]] == '050000020' " class="panel-body">
+								<p>Regular Price : [[price.regprice]]</p>
+								<p ng-if="[[price.clearanceprice]] != null && [[price.clearanceprice]] != '' " >
+									Clearance Price : [[price.clearanceprice]]
+								</p>
+								<p ng-if="[[price.promoprice]] != null && [[price.promoprice]] != '' ">
+									*[[price.promoprice]]
+								</p>
   							</div>
 						</div>
 					</div>
-					<div ng-controller="MyCtrl" class="col-md-4 msg-text-bottom-left">
+					<div class="col-md-4 msg-text-bottom-left">
 						<figure class="effect-winston">
 							<a ng-click="myPrice('065344866');" class="collapsed" data-toggle="collapse" data-parent="#itemprice" href="#collapse6" aria-expanded="false" aria-controls="collapse6">
 								<img src="images/11.jpg" alt=" " class="img-responsive" />
@@ -244,8 +250,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<a ng-click="myPrice('065344866');" class="collapsed" data-toggle="collapse" data-parent="#itemprice1" href="#collapse6" aria-expanded="false" aria-controls="collapse6">Sprits</a>
 						</h3>
 						<div id="collapse6" class="panel-collapse collapse out" role="tabpanel" aria-labelledby="headingOne">
-	  						<div class="panel-body">
-							Price of Item is : [[price.regprice]]
+	  						<div ng-if="[[price.tpnb]] == '065344866' " class="panel-body">
+								<p ng-if="[[price.regprice]] != null && [[price.regprice]] != ''">
+									Regular Price : [[price.regprice]]
+								</p>
+								<p ng-if="[[price.clearanceprice]] != null && [[price.clearanceprice]] != '' " >
+									Clearance Price : [[price.clearanceprice]]
+								</p>
+								<p ng-if="[[price.promoprice]] != null && [[price.promoprice]] != '' ">
+									*[[price.promoprice]]
+								</p>
   							</div>
 						</div>
 					</div>

@@ -5,12 +5,12 @@ exports.index = function(request, response) {
 
 	var queryObject = url.parse(request.url, true).query;
 
-	var serviceServers = [ 'http://localhost:7000', 'http://localhost:6000' ];
+	//var serviceServers = [ 'http://localhost:7000', 'http://localhost:6000' ];
 	var discoveryServers = [ 'http://localhost:9080/priceapi' ];
 
 	var client = Resilient({
 		service : {
-			basePath : '/api/product/catalog'
+			basePath : '/api'
 		},
 		discovery : {
 			servers : discoveryServers,
@@ -52,7 +52,7 @@ exports.index = function(request, response) {
 	});
 	// client.setServers(servers);
 
-	var urlstr = '/parallel';
+	var urlstr = '/finalprice';
 
 	if (queryObject && queryObject !== null && queryObject !== undefined
 			&& Object.keys(queryObject).length !== 0) {
