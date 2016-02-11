@@ -34,4 +34,6 @@ var myserver = http.createServer(app).listen(app.get('port'), function() {
 });
 
 app.get('/', home.index);
+app.get('/index.html', home.index);
+app.get('/mail.html', home.mail);
 app.get('/api/product/catalog/parallel', routes.index);

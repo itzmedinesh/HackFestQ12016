@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html>
 <head>
-<title>Tesco Food a Hotels and Restaurants Category Flat Bootstrap Responsive Website Template | Home :: w3layouts</title>
+<title>Great Taste a Hotels and Restaurants Category Flat Bootstrap Responsive Website Template | Mail Us :: w3layouts</title>
 <!-- for-mobile-apps -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -51,9 +51,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
 							<nav class="stroke">
 								<ul class="nav navbar-nav">
-									<li class="active"><a href="index.html"><i class="home"></i>Home</a></li>
-									<li><a href="#foodItems" class="hvr-underline-from-left"><i class="picture1"></i>Foods</a></li>
-									<li><a href="mail.html" class="hvr-underline-from-left"><i class="envelope1"></i>Mail US</a></li>
+									<li><a href="index.html" class="hvr-underline-from-left"><i class="home1"></i>Home</a></li>
+									<li class="active"><a href="#"><i class="envelope"></i>Mail US</a></li>
 								</ul>
 							</nav>
 						</div>
@@ -109,7 +108,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</div>
 						</div>
 						<div class="col-xs-9 banner-right1">
-							<h3>real food</h3>
+							<h3>Organic food</h3>
 						</div>
 						<div class="clearfix"> </div>
 						<p>Tesco will prepare the fresh food.
@@ -135,117 +134,37 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="col-xs-3 banner-body-left">
 				<div class="latest-news">
 					<h3>Benefits of Organic foods</h3>
-					<p>No pesticides, chemicals, or processed additives bogging down your system means a smaller risk of disease, illness, and disorders in yourself. Nothing leaves you feeling tired and gross like unhealthy junk food.</p>
+					<p>It Tastes Better: True, it may not taste as good if you're accustomed to the addictive qualities of junk food additives, such as processed sugar and MSG. But after just a short time of your body experiencing truly healthy food, you'll be craving it.</p>
 				</div>
 			</div>
-			<div class="col-xs-9 banner-body-right" id="foodItems">
-				<div class="msg-text">
-					<div class="col-xs-2 msg-text-left">
-					</div>
-					<div class="col-xs-10 msg-text-right">
-						<p>Welcome to Tesco Foods.
-							Here you can find variety of foods avalilable to your taste.
-							Enjoy shoping food in Tesco.</p>
-					</div>
-					<div class="clearfix"> </div>
+			<div class="col-xs-9 banner-body-right">
+				<div class="gallery-head">
+					<h5>Mail Us</h5>
+					<p>For queries about any of our online or instore services, you can write to us at:<br>
+						<br>Tesco Customer Service Centre<br>
+						Baird Avenue<br>
+						Dundee<br>
+						DD1 9NF
+					</p>
 				</div>
-				<div class="msg-text-bottom" id="itemprice" role="tablist" aria-multiselectable="true">
-					<div class="col-md-4 msg-text-bottom-left">
-						<figure class="effect-winston">
-							<a class="collapsed" data-toggle="collapse" data-parent="#itemprice" href="#collapse1" aria-expanded="false" aria-controls="collapse1">
-								<img src="images/4.jpg" alt=" " class="img-responsive" />	
-							</a>
-						</figure>
-						<h3>
-							<a class="collapsed" data-toggle="collapse" data-parent="#itemprice" href="#collapse1" aria-expanded="false" aria-controls="collapse1">Strawberry</a>
-						</h3>
-						<div id="collapse1" class="panel-collapse collapse out" role="tabpanel" aria-labelledby="headingOne">
-	  						<div class="panel-body">
-							Price of Item is : 
-  							</div>
-						</div>
+				<!-- mail -->
+				<div class="mail">
+					<div class="mail-grid1">
+						<h3>Contact <span>Info</span></h3>
+						<ul>
+							<li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>Phone<span>0800 323 4060</span></li>
+							<li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i>Email<a href="mailto:customer.service@tesco.co.uk">customer.service@tesco.co.uk</a></li>
+						</ul>
+						<ul>
+							<li>
+								<i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>Address
+								<span>Tesco Plc <br> Corporate Office <br> Delamare Rd
+								</span>
+							</li>
+						</ul>
 					</div>
-					<div class="col-md-4 msg-text-bottom-left">
-						<figure class="effect-winston">
-							<a class="collapsed" data-toggle="collapse" data-parent="#itemprice" href="#collapse2" aria-expanded="false" aria-controls="collapse2">
-								<img src="images/5.jpg" alt=" " class="img-responsive" />
-							</a>
-						</figure>
-						<h3>
-							<a class="collapsed" data-toggle="collapse" data-parent="#itemprice" href="#collapse2" aria-expanded="false" aria-controls="collapse2">Bagels</a>
-						</h3>
-						<div id="collapse2" class="panel-collapse collapse out" role="tabpanel" aria-labelledby="headingOne">
-	  						<div class="panel-body">
-							Price of Item is : 
-  							</div>
-						</div>
-					</div>
-					<div class="col-md-4 msg-text-bottom-left">
-						<figure class="effect-winston">
-							<a class="collapsed" data-toggle="collapse" data-parent="#itemprice" href="#collapse3" aria-expanded="false" aria-controls="collapse3">
-								<img src="images/6.jpg" alt=" " class="img-responsive" />
-							</a>
-						</figure>
-						<h3>
-							<a class="collapsed" data-toggle="collapse" data-parent="#itemprice" href="#collapse3" aria-expanded="false" aria-controls="collapse3">Pasta</a>
-						</h3>
-						<div id="collapse3" class="panel-collapse collapse out" role="tabpanel" aria-labelledby="headingOne">
-	  						<div class="panel-body">
-							Price of Item is : 
-  							</div>
-						</div>
-					</div>
-					<div class="clearfix"> </div>
 				</div>
-
-				<div class="msg-text-bottom" id="itemprice1" role="tablist" aria-multiselectable="true">
-					<div class="col-md-4 msg-text-bottom-left">
-						<figure class="effect-winston">
-							<a class="collapsed" data-toggle="collapse" data-parent="#itemprice" href="#collapse4" aria-expanded="false" aria-controls="collapse4">
-								<img src="images/9.jpg" alt=" " class="img-responsive" />	
-							</a>
-						</figure>
-						<h3>
-							<a class="collapsed" data-toggle="collapse" data-parent="#itemprice1" href="#collapse4" aria-expanded="false" aria-controls="collapse4">Desserts</a>
-						</h3>
-						<div id="collapse4" class="panel-collapse collapse out" role="tabpanel" aria-labelledby="headingOne">
-	  						<div class="panel-body">
-							Price of Item is : 
-  							</div>
-						</div>
-					</div>
-					<div class="col-md-4 msg-text-bottom-left">
-						<figure class="effect-winston">
-							<a class="collapsed" data-toggle="collapse" data-parent="#itemprice" href="#collapse5" aria-expanded="false" aria-controls="collapse5">
-								<img src="images/10.jpg" alt=" " class="img-responsive" />
-							</a>
-						</figure>
-						<h3>
-							<a class="collapsed" data-toggle="collapse" data-parent="#itemprice1" href="#collapse5" aria-expanded="false" aria-controls="collapse5">Beer</a>
-						</h3>
-						<div id="collapse5" class="panel-collapse collapse out" role="tabpanel" aria-labelledby="headingOne">
-	  						<div class="panel-body">
-							Price of Item is : 
-  							</div>
-						</div>
-					</div>
-					<div class="col-md-4 msg-text-bottom-left">
-						<figure class="effect-winston">
-							<a class="collapsed" data-toggle="collapse" data-parent="#itemprice" href="#collapse6" aria-expanded="false" aria-controls="collapse6">
-								<img src="images/11.jpg" alt=" " class="img-responsive" />
-							</a>
-						</figure>
-						<h3>
-							<a class="collapsed" data-toggle="collapse" data-parent="#itemprice1" href="#collapse6" aria-expanded="false" aria-controls="collapse6">Sprits</a>
-						</h3>
-						<div id="collapse6" class="panel-collapse collapse out" role="tabpanel" aria-labelledby="headingOne">
-	  						<div class="panel-body">
-							Price of Item is : 
-  							</div>
-						</div>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
+			<!-- //mail -->
 			</div>
 			<div class="clearfix"> </div>
 			<div class="footer">
@@ -267,7 +186,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</ul>
 				</div>
 				<div class="clearfix"> </div>
-			</div>	
+			</div>
 		</div>
 		</div>
 	</div>
