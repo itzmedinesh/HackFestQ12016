@@ -157,7 +157,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div ng-app="MyItemPrice" class="msg-text-bottom" id="itemprice" role="tablist" aria-multiselectable="true">
 					<div ng-controller="MyCtrl" class="col-md-4 msg-text-bottom-left">
 						<figure class="effect-winston">
-							<a ng-click="myPrice('12345');" lass="collapsed" data-toggle="collapse" data-parent="#itemprice" href="#collapse1" aria-expanded="false" aria-controls="collapse1">
+							<a ng-click="myPrice('12345');" class="collapsed" data-toggle="collapse" data-parent="#itemprice" href="#collapse1" aria-expanded="false" aria-controls="collapse1">
 								<img src="images/4.jpg" alt=" " class="img-responsive" />	
 							</a>
 						</figure>
