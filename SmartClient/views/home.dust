@@ -157,12 +157,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div ng-app="MyItemPrice" class="msg-text-bottom" id="itemprice" role="tablist" aria-multiselectable="true">
 					<div ng-controller="MyCtrl" class="col-md-4 msg-text-bottom-left">
 						<figure class="effect-winston">
-							<a ng-click="myPrice('12345');" class="collapsed" data-toggle="collapse" data-parent="#itemprice" href="#collapse1" aria-expanded="false" aria-controls="collapse1">
+							<a ng-click="myPrice('050000016');" class="collapsed" data-toggle="collapse" data-parent="#itemprice" href="#collapse1" aria-expanded="false" aria-controls="collapse1">
 								<img src="images/4.jpg" alt=" " class="img-responsive" />	
 							</a>
 						</figure>
 						<h3>
-							<a ng-click="myPrice('12345');" class="collapsed" data-toggle="collapse" data-parent="#itemprice" href="#collapse1" aria-expanded="false" aria-controls="collapse1">Strawberry</a>
+							<a ng-click="myPrice('050000016');" class="collapsed" data-toggle="collapse" data-parent="#itemprice" href="#collapse1" aria-expanded="false" aria-controls="collapse1">Strawberry</a>
 						</h3>
 						<div id="collapse1" class="panel-collapse collapse out" role="tabpanel" aria-labelledby="headingOne">
 	  						<div class="panel-body">
@@ -172,12 +172,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 					<div ng-controller="MyCtrl" class="col-md-4 msg-text-bottom-left">
 						<figure class="effect-winston">
-							<a ng-click="myPrice('12345');" class="collapsed" data-toggle="collapse" data-parent="#itemprice" href="#collapse2" aria-expanded="false" aria-controls="collapse2">
+							<a ng-click="myPrice('050000017');" class="collapsed" data-toggle="collapse" data-parent="#itemprice" href="#collapse2" aria-expanded="false" aria-controls="collapse2">
 								<img src="images/5.jpg" alt=" " class="img-responsive" />
 							</a>
 						</figure>
 						<h3>
-							<a ng-click="myPrice('12345');" class="collapsed" data-toggle="collapse" data-parent="#itemprice" href="#collapse2" aria-expanded="false" aria-controls="collapse2">Bagels</a>
+							<a ng-click="myPrice('050000017');" class="collapsed" data-toggle="collapse" data-parent="#itemprice" href="#collapse2" aria-expanded="false" aria-controls="collapse2">Bagels</a>
 						</h3>
 						<div id="collapse2" class="panel-collapse collapse out" role="tabpanel" aria-labelledby="headingOne">
 	  						<div class="panel-body">
@@ -187,12 +187,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 					<div ng-controller="MyCtrl" class="col-md-4 msg-text-bottom-left">
 						<figure class="effect-winston">
-							<a ng-click="myPrice('12345');" class="collapsed" data-toggle="collapse" data-parent="#itemprice" href="#collapse3" aria-expanded="false" aria-controls="collapse3">
+							<a ng-click="myPrice('050000018');" class="collapsed" data-toggle="collapse" data-parent="#itemprice" href="#collapse3" aria-expanded="false" aria-controls="collapse3">
 								<img src="images/6.jpg" alt=" " class="img-responsive" />
 							</a>
 						</figure>
 						<h3>
-							<a ng-click="myPrice('12345');" class="collapsed" data-toggle="collapse" data-parent="#itemprice" href="#collapse3" aria-expanded="false" aria-controls="collapse3">Pasta</a>
+							<a ng-click="myPrice('050000018');" class="collapsed" data-toggle="collapse" data-parent="#itemprice" href="#collapse3" aria-expanded="false" aria-controls="collapse3">Pasta</a>
 						</h3>
 						<div id="collapse3" class="panel-collapse collapse out" role="tabpanel" aria-labelledby="headingOne">
 	  						<div class="panel-body">
@@ -206,12 +206,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div ng-app="MyItemPrice" class="msg-text-bottom" id="itemprice1" role="tablist" aria-multiselectable="true">
 					<div ng-controller="MyCtrl" class="col-md-4 msg-text-bottom-left">
 						<figure class="effect-winston">
-							<a ng-click="myPrice('12345');" class="collapsed" data-toggle="collapse" data-parent="#itemprice" href="#collapse4" aria-expanded="false" aria-controls="collapse4">
+							<a ng-click="myPrice('050000019');" class="collapsed" data-toggle="collapse" data-parent="#itemprice" href="#collapse4" aria-expanded="false" aria-controls="collapse4">
 								<img src="images/9.jpg" alt=" " class="img-responsive" />	
 							</a>
 						</figure>
 						<h3>
-							<a ng-click="myPrice('12345');" class="collapsed" data-toggle="collapse" data-parent="#itemprice1" href="#collapse4" aria-expanded="false" aria-controls="collapse4">Desserts</a>
+							<a ng-click="myPrice('050000019');" class="collapsed" data-toggle="collapse" data-parent="#itemprice1" href="#collapse4" aria-expanded="false" aria-controls="collapse4">Desserts</a>
 						</h3>
 						<div id="collapse4" class="panel-collapse collapse out" role="tabpanel" aria-labelledby="headingOne">
 	  						<div class="panel-body">
@@ -221,12 +221,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 					<div ng-controller="MyCtrl" class="col-md-4 msg-text-bottom-left">
 						<figure class="effect-winston">
-							<a ng-click="myPrice('12345');" class="collapsed" data-toggle="collapse" data-parent="#itemprice" href="#collapse5" aria-expanded="false" aria-controls="collapse5">
+							<a ng-click="myPrice('050000020');" class="collapsed" data-toggle="collapse" data-parent="#itemprice" href="#collapse5" aria-expanded="false" aria-controls="collapse5">
 								<img src="images/10.jpg" alt=" " class="img-responsive" />
 							</a>
 						</figure>
 						<h3>
-							<a ng-click="myPrice('12345');" class="collapsed" data-toggle="collapse" data-parent="#itemprice1" href="#collapse5" aria-expanded="false" aria-controls="collapse5">Beer</a>
+							<a ng-click="myPrice('050000020');" class="collapsed" data-toggle="collapse" data-parent="#itemprice1" href="#collapse5" aria-expanded="false" aria-controls="collapse5">Beer</a>
 						</h3>
 						<div id="collapse5" class="panel-collapse collapse out" role="tabpanel" aria-labelledby="headingOne">
 	  						<div class="panel-body">
@@ -236,12 +236,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 					<div ng-controller="MyCtrl" class="col-md-4 msg-text-bottom-left">
 						<figure class="effect-winston">
-							<a ng-click="myPrice('12345');" class="collapsed" data-toggle="collapse" data-parent="#itemprice" href="#collapse6" aria-expanded="false" aria-controls="collapse6">
+							<a ng-click="myPrice('065344866');" class="collapsed" data-toggle="collapse" data-parent="#itemprice" href="#collapse6" aria-expanded="false" aria-controls="collapse6">
 								<img src="images/11.jpg" alt=" " class="img-responsive" />
 							</a>
 						</figure>
 						<h3>
-							<a ng-click="myPrice('12345');" class="collapsed" data-toggle="collapse" data-parent="#itemprice1" href="#collapse6" aria-expanded="false" aria-controls="collapse6">Sprits</a>
+							<a ng-click="myPrice('065344866');" class="collapsed" data-toggle="collapse" data-parent="#itemprice1" href="#collapse6" aria-expanded="false" aria-controls="collapse6">Sprits</a>
 						</h3>
 						<div id="collapse6" class="panel-collapse collapse out" role="tabpanel" aria-labelledby="headingOne">
 	  						<div class="panel-body">
