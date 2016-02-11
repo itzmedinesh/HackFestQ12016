@@ -11,6 +11,8 @@
     "adaro": "*",
     "async": "*",
     "request": "*",
-    "circuit-breaker-js" : "*"
+    "circuit-breaker-js": "*",
+    "socket.io": "*"
+
   }
 }
