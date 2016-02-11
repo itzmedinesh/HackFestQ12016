@@ -13,11 +13,11 @@ exports.getPriceDetails = function(request, response) {
 
 	var execTasks = [];
 
-	execTasks.push(price.getProductPrices.bind(price, queryObject.tpnb, "1"));
+	execTasks.push(price.getProductPrices.bind(price, queryObject.tpnb, "Z1"));
 	execTasks.push(promotion.getPromoProduct.bind(promotion, queryObject.tpnb,
-			"5"));
+			"Z5"));
 	execTasks.push(clearance.getProductClearance.bind(clearance,
-			queryObject.tpnb, "20"));
+			queryObject.tpnb, "Z20"));
 
 	async.parallel(execTasks, function(err, results) {
 		if (err) {
