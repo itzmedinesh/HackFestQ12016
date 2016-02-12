@@ -10,8 +10,8 @@ var promoUrl = 'http://localhost:8082/promotion/';
 var promoCircuitConfig = {
 	windowDuration : 10000,
 	numBuckets : 10,
-	timeoutDuration : 6,
-	volumeThreshold : 20,
+	timeoutDuration : 20,
+	volumeThreshold : 1,
 	errorThreshold : 50
 };
 
