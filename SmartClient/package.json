@@ -12,6 +12,7 @@
     "async": "*",
     "request": "*",
     "circuit-breaker-js" : "*",
-    "resilient":"*"
+    "resilient":"*",
+    "socket.io": "*"
   }
 }

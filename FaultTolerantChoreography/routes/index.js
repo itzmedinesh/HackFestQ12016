@@ -13,11 +13,12 @@ exports.getPriceDetails = function(request, response) {
 
 	var execTasks = [];
 
-	execTasks.push(price.getProductPrices.bind(price, queryObject.tpnb, "Z1"));
+	execTasks.push(price.getProductPrices.bind(price, queryObject.tpnb, "Z1",
+			request.eventsocket));
 	execTasks.push(promotion.getPromoProduct.bind(promotion, queryObject.tpnb,
-			"Z5"));
+			"Z5", request.eventsocket));
 	execTasks.push(clearance.getProductClearance.bind(clearance,
-			queryObject.tpnb, "Z20"));
+			queryObject.tpnb, "Z20", request.eventsocket));
 
 	async
 			.parallel(
@@ -33,8 +34,10 @@ exports.getPriceDetails = function(request, response) {
 
 							for (var i = 0; i < results.length; i++) {
 								var obj = results[i];
-								if (obj.price && obj.price !== null
-										&& obj.price !== undefined) {
+								if (obj.price
+										&& obj.price !== null
+										&& obj.price !== undefined
+										&& obj.price !== 'price not available at the moment') {
 									var priceobj = JSON.parse(obj.price);
 									var tpnckey = Object
 											.keys(priceobj.tpncToProductVariant)[0];
@@ -50,7 +53,8 @@ exports.getPriceDetails = function(request, response) {
 									pricedata.promoprice = "Item part of meal deal promotion";
 								} else if (obj.clearance
 										&& obj.clearance !== null
-										&& obj.clearance !== undefined) {
+										&& obj.clearance !== undefined
+										&& obj.clearance !== 'clearance service not available at the moment') {
 									var clrobj = JSON.parse(obj.clearance);
 									var effdtkey = Object
 											.keys(clrobj.effective_date)[0];

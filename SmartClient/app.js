@@ -8,6 +8,8 @@ var dustjs = require('adaro');
 
 var app = express();
 
+var eventsocket = null;
+
 // all environments
 app.engine('dust', dustjs.dust({
 	cache : true
@@ -29,11 +31,26 @@ if ('development' === app.get('env')) {
 
 app.set('port', process.env.PORT || 8000);
 
-var myserver = http.createServer(app).listen(app.get('port'), function() {
+var uiserver = http.createServer(app).listen(app.get('port'), function() {
 	console.log('Smart Client available on port ' + app.get('port'));
+});
+
+var io = require('socket.io').listen(uiserver);
+
+io.sockets.on('connection', function(socket) {
+	eventsocket = socket;
+	socket.emit('serverMessage', '-None-');
+	socket.on('clientMessage', function(content) {
+		console.log(content);
+		socket.emit('serverMessage', 'You said: ' + content);
+	});
 });
 
 app.get('/', home.index);
 app.get('/index.html', home.index);
 app.get('/mail.html', home.mail);
-app.get('/price-api', routes.index);
+app.get('/price-api', function(request, response) {
+	request.eventsocket = eventsocket;
+	routes.index(request, response);
+});
+app.get('/api/monitor', routes.monindex);

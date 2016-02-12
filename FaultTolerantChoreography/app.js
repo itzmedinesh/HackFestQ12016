@@ -28,10 +28,27 @@ if ('development' == app.get('env')) {
 	app.use(express.errorHandler());
 }
 
+var eventsocket = null;
+
 app.set('port', process.env.PORT || 7000);
 
-app.get('/api/finalprice', routes.getPriceDetails);
+app.get('/api/finalprice', function(request, response) {
+	request.eventsocket = eventsocket;
+	routes.getPriceDetails(request, response);
+});
 
-http.createServer(app).listen(app.get('port'), function() {
+
+var apiserver = http.createServer(app).listen(app.get('port'), function() {
 	console.log('Choreography server listening on port ' + app.get('port'));
+});
+
+var io = require('socket.io').listen(apiserver);
+
+io.sockets.on('connection', function(socket) {
+	eventsocket = socket;
+	socket.emit('serverMessage', 'client connected');
+	socket.on('clientMessage', function(content) {
+		console.log(content);
+		socket.emit('serverMessage', 'You said: ' + content);
+	});
 });

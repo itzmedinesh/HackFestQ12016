@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<title>{title}</title>
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+	<script src="http://localhost:7000/socket.io/socket.io.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular.js"></script>
+	<script type="text/javascript" src="js/websockcontroller.js"></script>
+</head>
+<body>
+<!-- Header -->
+<div id="header">
+	<div class="shell">
+		<!-- Logo + Top Nav -->
+		<div id="top">
+			<h1><a href="#">{title}</a></h1>
+			<div id="top-navigation">
+			</div>
+		</div>
+		<!-- End Logo + Top Nav -->
+		
+		<!-- Main Nav -->
+		<div id="navigation">
+			<ul>
+			    <li><a href="#" class="active"><span>Dashboard</span></a></li>
+			</ul>
+		</div>
+		<!-- End Main Nav -->
+	</div>
+</div>
+<!-- End Header -->
+
+<!-- Container -->
+<div id="container" ng-app="SocketApp">
+	<div class="shell" ng-controller="WebSocketController">
+
+		<div id="main">
+			<div class="cl">&nbsp;</div>
+			
+			<!-- Content -->
+			<div id="content">
+				
+				<!-- Box -->
+				<div class="box">
+					<!-- Box Head -->
+					<div class="box-head">
+						<h2 class="left">Circuit Events</h2>
+						<div class="right">
+						</div>
+					</div>
+					<!-- End Box Head -->	
+
+					<!-- Table -->
+					<div class="table">
+						<table width="100%" border="0" cellspacing="0" cellpadding="0">
+							<tr>
+								<th>Event Name</th>
+								<th>Circuit Status</th>
+								<th>Datetime</th>
+								<th width="110" class="ac">Metrics</th>
+							</tr>
+							<tr>
+								<td><h3>price</h3></td>
+								<td>{{ priceCircuitEvent.type }}</td>
+								<td>{{ priceCircuitEvent.datetime }}</td>
+								<td>{{ priceCircuitEvent.metrics }}</td>
+							</tr>
+							<tr>
+								<td><h3>promotion</h3></td>
+								<td>{{ promotionCircuitEvent.type }}</td>
+								<td>{{ promotionCircuitEvent.datetime }}</td>
+								<td>{{ promotionCircuitEvent.metrics }}</td>
+							</tr>
+							<tr>
+								<td><h3>clearance</h3></td>
+								<td>{{ clearanceCircuitEvent.type }}</td>
+								<td>{{ clearanceCircuitEvent.datetime }}</td>
+								<td>{{ clearanceCircuitEvent.metrics }}</td>
+							</tr>
+
+						</table>
+						
+					</div>
+					<!-- Table -->
+					
+				</div>
+				<!-- End Box -->
+				<!-- Box -->
+				<div class="box">
+					<!-- Box Head -->
+					<div class="box-head">
+						<h2 class="left">Resilient Client Events</h2>
+						<div class="right">
+						</div>
+					</div>
+					<!-- End Box Head -->	
+
+					<!-- Table -->
+					<div class="table">
+						<table width="100%" border="0" cellspacing="0" cellpadding="0">
+							<tr>
+								<th>Server Name</th>
+								<th></th>
+								<th></th>
+								<th width="110" class="ac">Server Status</th>
+							</tr>
+							<tr>
+								<td><h3>{{ activeserver }}</h3></td>
+								<td></td>
+								<td></td>
+								<td><h3>Active</h3></td>
+							</tr>
+	
+						</table>
+						
+					</div>
+					<!-- Table -->
+					
+				</div>
+				<!-- End Box -->
+			</div>
+			<!-- End Content -->
+			<div class="cl">&nbsp;</div>			
+		</div>
+		<!-- Main -->
+	</div>
+</div>
+<!-- End Container -->
+
+<!-- Footer -->
+<div id="footer">
+	<div class="shell">
+	</div>
+</div>
+<!-- End Footer -->
+	
+</body>
+</html>

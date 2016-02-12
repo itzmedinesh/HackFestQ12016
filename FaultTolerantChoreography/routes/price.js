@@ -1,22 +1,33 @@
 var PriceCircuitBreaker = require('circuit-breaker-js');
 var httpreq = require('request');
 
+var websock = null;
+
 function Price() {
 
 }
 
 var priceUrl = 'http://localhost:8084/price';
 
+var circuitEvent = {};
+
 var priceCircuitConfig = {
 	windowDuration : 10000,
 	numBuckets : 10,
-	timeoutDuration : 1000,
+	timeoutDuration : 20,
 	volumeThreshold : 1,
 	errorThreshold : 50
 };
 
 var priceFallback = function(callback) {
-	console.log('Price service is down : returning static price');
+	console.log('Price service in fallback mode : price unavailable');
+	if (websock) {
+		circuitEvent.datetime = new Date();
+		circuitEvent.metrics = null;
+		circuitEvent.name = "price";
+		circuitEvent.type = "fallback";
+		websock.emit('serverMessage', circuitEvent);
+	}
 	var priceData = {
 		"price" : "price not available at the moment"
 	};
@@ -25,10 +36,11 @@ var priceFallback = function(callback) {
 
 var priceServiceBreaker = new PriceCircuitBreaker(priceCircuitConfig);
 
-Price.prototype.getProductPrices = function(tpnb,zone, callback) {
+Price.prototype.getProductPrices = function(tpnb, zone, eventsocket, callback) {
+	websock = eventsocket;
 	var priceCommand = function(success, failure) {
 		httpreq({
-			url : priceUrl + "/" + tpnb + "/" +zone,
+			url : priceUrl + "/" + tpnb + "/" + zone,
 			method : 'GET',
 			headers : {
 				'Content-Type' : 'application/json'
@@ -51,10 +63,24 @@ Price.prototype.getProductPrices = function(tpnb,zone, callback) {
 
 priceServiceBreaker.onCircuitOpen = function(metrics) {
 	console.warn('Price Service Circuit open', metrics);
+	if (websock) {
+		circuitEvent.datetime = new Date();
+		circuitEvent.metrics = metrics;
+		circuitEvent.name = "price";
+		circuitEvent.type = "open";
+		websock.emit('serverMessage', circuitEvent);
+	}
 };
 
 priceServiceBreaker.onCircuitClose = function(metrics) {
 	console.warn('Price Service Circuit close', metrics);
+	if (websock) {
+		circuitEvent.datetime = new Date();
+		circuitEvent.metrics = metrics;
+		circuitEvent.name = "price";
+		circuitEvent.type = "close";
+		websock.emit('serverMessage', circuitEvent);
+	}
 };
 
 module.exports = new Price();
